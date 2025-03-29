@@ -1,5 +1,0 @@
-package com.BackendLLM.project.service;
-
-public interface UserService {
-
-}
