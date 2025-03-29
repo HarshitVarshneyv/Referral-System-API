@@ -1,4 +1,43 @@
 # Referral System API
+## 🚀 Problem Statement given by Simplify Money For Software engineering inter[Great thanks for selecting me and shotlisting me for this opportunity]
+
+*********************** Java Backend LLM Assessment ***********************
+Successful Referral
+==============================================================
+Problem Description
+Create an API for user signup with referral code tracking, where a referral is
+considered successful only after the user completes their profile.
+For instance, if user A signs up using referral code of user B then successful
+referral is considered only after user A completes the profile.
+Expected Output -
+1. User Signup Endpoint
+-Allow signup with/without referral code
+-Generate unique referral code for each user
+-Validate referral code if provided
+2. Referral Tracking
+-Track referral status
+-Link referrer and referred user
+-Mark referral as complete upon profile completion
+3. API Endpoints
+-Signup API
+-Profile Completion API
+-Get Referrals API
+-Referral Report API (Bonus)
+Deployment Notes
+-Deploy on a public server
+-Share the GitHub repo
+-Share the curl request
+-Feel free to pick your choice of tools like NoSQL or SQL DB, choice of cloud
+provider etc
+
+Coding Guidelines
+-Write clean, readable code
+-Add meaningful comments
+-Create comprehensive README
+-Implement unit test cases
+Brownie Points:
+- An endpoint
+
 
 ## 🚀 Overview
 The **Referral System API** is a backend service built using **Spring Boot** and **JPA** that allows users to sign up using referral codes and track their successful referrals. The system considers a referral "successful" only when the referred user completes their profile.
@@ -109,7 +148,6 @@ referral-system/
 │   ├── entity/User.java
 │   ├── repository/UserRepository.java
 │   ├── service/UserService.java
-│   ├── dto/ReferralReportDTO.java
 ├── src/main/resources/application.properties
 ├── pom.xml
 └── README.md
