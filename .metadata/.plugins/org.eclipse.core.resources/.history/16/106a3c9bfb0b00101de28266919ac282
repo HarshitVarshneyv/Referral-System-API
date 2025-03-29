@@ -1,0 +1,28 @@
+package com.BackendLLM.project.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.BackendLLM.project.entity.User;
+import com.BackendLLM.project.repository.UserRepository;
+
+@Service
+public class UserServiceImpl implements UserService{
+
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Override
+	public User saveUser(User user) {
+		// TODO Auto-generated method stub
+		return userRepository.save(user);
+	}
+
+	public boolean isReferralCodeValid(String referralCode) {
+        Optional<User> user = userRepository.findByReferralCode(referralCode);
+        return user.isPresent();
+    }
+
+}

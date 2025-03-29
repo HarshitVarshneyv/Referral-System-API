@@ -1,0 +1,43 @@
+package com.BackendLLM.project.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import com.BackendLLM.project.entity.User;
+import com.BackendLLM.project.service.UserService;
+
+
+@RestController
+@RequestMapping("/api/users")
+public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("/signup")
+    public ResponseEntity<User> registerUser(@RequestBody User user,
+                                             @RequestParam(required = false) String referralCode) {
+        User savedUser = userService.registerUser(user, referralCode);
+        return ResponseEntity.ok(savedUser);
+    }
+
+    // Profile Completion API
+    @PostMapping("/complete-profile/{userId}")
+    public ResponseEntity<String> completeProfile(@PathVariable Long userId) {
+        boolean success = userService.markProfileCompleted(userId);
+        if (success) {
+            return ResponseEntity.ok("Profile completed successfully");
+        } else {
+            return ResponseEntity.badRequest().body("User not found");
+        }
+    }
+
+    // Get Referrals API
+    @GetMapping("/referrals/{userId}")
+    public ResponseEntity<List<User>> getReferrals(@PathVariable Long userId) {
+        List<User> referrals = userService.getReferrals(userId);
+        return ResponseEntity.ok(referrals);
+    }
+}

@@ -1,0 +1,22 @@
+package com.BackendLLM.project.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.BackendLLM.project.entity.User;
+import com.BackendLLM.project.service.UserService;
+
+@RestController
+public class UserController {
+
+	@Autowired
+	private UserService userService;
+	
+	@PostMapping("/Signup")
+	public String add(@RequestBody User user) {
+		userService.saveUser(user);
+		return "New User has been added";
+	}
+}

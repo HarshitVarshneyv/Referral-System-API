@@ -1,0 +1,5 @@
+package com.BackendLLM.project.repository;
+
+public class UserRepository {
+
+}

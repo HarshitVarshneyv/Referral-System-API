@@ -1,0 +1,8 @@
+package com.BackendLLM.project.service;
+
+import com.BackendLLM.project.entity.User;
+
+public interface UserService {
+	
+	public User saveUser(User user);
+	}
