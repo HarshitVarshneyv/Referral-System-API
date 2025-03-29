@@ -34,9 +34,6 @@ Coding Guidelines
 -Write clean, readable code
 -Add meaningful comments
 -Create comprehensive README
--Implement unit test cases
-Brownie Points:
-- An endpoint
 
 
 ## 🚀 Overview
