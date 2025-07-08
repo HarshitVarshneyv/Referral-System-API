@@ -1,7 +1,7 @@
 # Referral System API
 ## 🚀 Problem Statement given by Simplify Money For Software engineering inter[Great thanks for selecting me and shotlisting me for this opportunity]
 
-*********************** Java Backend LLM Assessment ***********************
+***** Java Backend Assessment *****
 Successful Referral [Note : For achiving scalability i have followed the best practice of Spring Boot, Leveraging the Java 8 features like streams and Lambda function are used in this project.]
 ==============================================================
 Problem Description
